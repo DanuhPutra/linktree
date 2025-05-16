@@ -12,7 +12,7 @@ const App = () => {
           <ProfileCard
             name="Ngurah Danuh Putra"
             username="@Nanuuu"
-            avatarUrl="../public/images/profil.JPG"
+            avatarUrl="/images/profile.png"
           />
           <div className="space-y-4">
             <LinkItem title="Portfolio Website" url="#" icon={Globe} />
