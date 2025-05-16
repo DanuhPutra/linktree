@@ -9,7 +9,7 @@ const ProfileCard = ({ name, username, avatarUrl }: Props) => (
     <img
       src={avatarUrl}
       alt={name}
-      className="w-80 h-80 rounded-full border-4 border-white dark:border-gray-800"
+      className="w-72 h-72 rounded-full border-4 border-white dark:border-gray-800"
     />
     <h1 className="mt-4 text-xl font-bold">{name}</h1>
     <p className="text-sm text-gray-500 dark:text-gray-400">{username}</p>

@@ -9,12 +9,9 @@ const ParticleBackground = () => {
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-
-    // Atur ukuran canvas
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Buat partikel
     const particles: Array<{
       x: number;
       y: number;
@@ -32,42 +29,28 @@ const ParticleBackground = () => {
         speedY: Math.random() * 1 - 0.5
       });
     }
-
-    // Animasi
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      // Update dan gambar partikel
       particles.forEach(particle => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
-        
-        // Pantulan di tepi
         if (particle.x < 0 || particle.x > canvas.width) particle.speedX *= -1;
         if (particle.y < 0 || particle.y > canvas.height) particle.speedY *= -1;
-        
-        // Gambar partikel
         ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
         ctx.fill();
       });
-      
       requestAnimationFrame(animate);
     };
-
     animate();
-
-    // Handle resize
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   return (
     <canvas 
       ref={canvasRef}
