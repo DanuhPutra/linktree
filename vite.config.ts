@@ -6,5 +6,9 @@ export default defineConfig({
   optimizeDeps: {
   include: ["@tsparticles/engine"]
   },
+  base: '/linktree/', 
+  build: {
+    outDir: 'docs'
+  }
 })
 

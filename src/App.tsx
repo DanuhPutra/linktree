@@ -12,10 +12,10 @@ const App = () => {
           <ProfileCard
             name="Ngurah Danuh Putra"
             username="@Nanuuu"
-            avatarUrl="/images/profile.png"
+            avatarUrl={`${import.meta.env.BASE_URL}images/profile.png`}
           />
           <div className="space-y-4">
-            <LinkItem title="Portfolio Website" url="#" icon={Globe} />
+            <LinkItem title="Portfolio Website" url="https://danuhputra.github.io/Portfolio/" icon={Globe} />
             <LinkItem title="GitHub" url="https://github.com/DanuhPutra" icon={Github} />
             <LinkItem title="LinkedIn" url="https://www.linkedin.com/in/ngurah-danuh-putra-a3891230a/" icon={Linkedin} />
             <LinkItem title="Instagram" url="https://www.instagram.com/danuhputra/" icon={Instagram} />
